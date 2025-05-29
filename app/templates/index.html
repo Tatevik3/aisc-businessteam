@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tariff Master Bot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <h1 class="title">Tariff Master Chatbot</h1>
+  <p class="subtitle">Ask me about tariffs for different products!</p>
+  <div class="text-generator">
+  <form id="chat-form">
+        <input type="text" id="user-input" autocomplete="off" placeholder="Ask me a question" required>
+
+    <button class="submit-button" type="submit">Send</button>
+  </form>
+</div>
+  <div id="chat-log"></div>
+<script>
+const form = document.getElementById('chat-form');
+const input = document.getElementById('user-input');
+const chatLog = document.getElementById('chat-log');
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const message = input.value;
+  chatLog.innerHTML += `<div><b>You:</b> ${message}</div>`;  // Show user message
+  input.value = '';
+  
+  const response = await fetch('/ask', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: `message=${encodeURIComponent(message)}`
+  });
+  
+  const data = await response.json();
+  
+  // Show bot reply, replacing newlines with <br>
+  chatLog.innerHTML += `<div><b>Tariff King:</b> ${data.reply.replace(/\n/g, '<br>')}</div>`;
+});
+</script>
+<img src="{{ url_for('static', filename='graph.png') }}" alt="Tariff Graph" class="graph-image">
+</body>
+</html>

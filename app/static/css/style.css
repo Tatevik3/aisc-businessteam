@@ -1,0 +1,96 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #00b585;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  color: #343434;
+  text-align: center;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.text-generator {
+  background-color: #ffffff;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  border: #343434 2px solid;
+}
+
+#chat-form {
+  display: flex;
+  gap: 10px;
+}
+
+#user-input {
+  flex-grow: 1;
+  padding: 10px 15px;
+  font-size: 1.1rem;
+  border: 2px solid #00b585;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#user-input:focus {
+  border-color: #00b585;
+}
+
+.submit-button {
+  background-color: #00b585;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #343434;
+}
+
+#chat-log {
+  width: 90%;
+  max-width: 600px;
+  background-color: #c8c7c7;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-height: 400px;
+  overflow-y: auto;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  border: 2px solid #343434;
+}
+
+#chat-log div {
+  margin-bottom: 12px;
+}
+
+#chat-log b {
+  color: #34495e;
+}
+p{
+  font-size: 20px;
+  color: #343434;
+
+}
+img {
+  max-width: 1000px;
+  height: auto;
+  border-radius: 10px;
+  padding-top: 30px;
+}
