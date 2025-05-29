@@ -94,3 +94,12 @@ img {
   border-radius: 10px;
   padding-top: 30px;
 }
+#myChart {
+  background-color: white;
+  width: 1000px !important;
+  height: 500px !important;
+}
+#product-select{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
